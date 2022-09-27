@@ -377,7 +377,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 }
 
 /**
- * @brief Read the values from the sensors, processe them and display them on the ePaper Display (EPD) of the board
+ * @brief Read the values from the sensors, process them and display them on the ePaper Display (EPD) of the board
  * @param None
  * @retval None
  */
