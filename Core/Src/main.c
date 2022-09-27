@@ -289,6 +289,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/**
+ * @brief Select the ADC channel to enable.
+ * @param channel: the ADC channel to enable
+ * @param channelsToDisable: ADC channels to disable
+ * @retval None
+ */
 void ADC_Select_Channel(uint32_t channel, uint32_t* channelsToDisable)
 {
 	ADC_ChannelConfTypeDef enableConfig = {0};
@@ -313,6 +319,11 @@ void ADC_Select_Channel(uint32_t channel, uint32_t* channelsToDisable)
 	}
 }
 
+/**
+ * @brief Initial calibration of the ADC.
+ * @param None
+ * @retval None
+ */
 void ADC_Calibrate(void)
 {
 	/* (1) Ensure that ADEN = 0 */
@@ -329,6 +340,12 @@ void ADC_Calibrate(void)
 	ADC1->ISR |= ADC_ISR_EOCAL; /* (5) */
 }
 
+/**
+ * @brief Compute the average value from an array.
+ * @param arr: the non-empty array
+ * @param values: the number of values in the array
+ * @retval the average of the array values
+ */
 static float Avg_Array(float* arr, int values) {
 	if(values == 0)
 	{
