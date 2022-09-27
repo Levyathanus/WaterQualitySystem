@@ -1,6 +1,6 @@
 # Water Quality System
 
-<img src="/Images/unimi_logo.png" alt="LOGO" width="100" align="right"/>
+<img src="/Images/unimi_logo.jpg" alt="LOGO" width="100" align="right"/>
 
 - **Autori:** Alessia Libertucci, Michele Zenoni
 - **Corso:** "Progettazione di Sistemi Operativi" 
