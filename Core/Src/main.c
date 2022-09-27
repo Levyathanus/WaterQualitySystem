@@ -359,6 +359,11 @@ static float Avg_Array(float* arr, int values) {
 	return sum/values;
 }
 
+/**
+ * @brief Make the system run again and toggle the green led
+ * @param GPIO_Pin: the number of the gpio pin
+ * @retval None
+ */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if(GPIO_Pin == GPIO_PIN_1)
@@ -371,6 +376,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 }
 
+/**
+ * @brief Read the values from the sensors, processe them and display them on the ePaper Display (EPD) of the board
+ * @param None
+ * @retval None
+ */
 void Show_Measure(void)
 {
 	__disable_irq();
@@ -433,10 +443,10 @@ void Show_Measure(void)
 		HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
 
 		tdsRawValue = HAL_ADC_GetValue(&hadc);
-		tdsVoltage = ((float)tdsRawValue) / 4095 * 5.0;
+		tdsVoltage = ((float)tdsRawValue) / 4095 * 5.0;  // Voltage conversion: 12 bit ADC (2^12 = 4096), 5V power
 
-		float compensationCoefficient = 1.0 + 0.02 * (temperature - 25.0); //temperature compensation formula: fFinalResult(25^C) = fFinalResult(current)/(1.0+0.02*(fTP-25.0));
-		float compensationVoltage = tdsVoltage / compensationCoefficient; //temperature compensation
+		float compensationCoefficient = 1.0 + 0.02 * (temperature - 25.0); // temperature compensation formula
+		float compensationVoltage = tdsVoltage / compensationCoefficient; // Voltage calibration with temperature compensation
 		tds = (133.42 * compensationVoltage * compensationVoltage * compensationVoltage
 				- 255.86 * compensationVoltage * compensationVoltage + 857.39 * compensationVoltage) * 0.5 * TDS_CALIBRATION_COEFFICIENT; //convert voltage value to tds value
 
@@ -467,6 +477,13 @@ void Show_Measure(void)
 	Show_Water_Quality(pHAvgValue, ntuAvgValue, tdsAvgValue);
 }
 
+/**
+ * @brief Calculate the score to be associated with the quality of the water and display it on the EPD
+ * @param ph: the pH value
+ * @param ntu: the turbidity value
+ * @param tds: the tds value
+ * @retval None
+ */
 void Show_Water_Quality(float pH, uint16_t ntu, uint16_t tds)
 {
 	float qualityPoints = 0.0;
