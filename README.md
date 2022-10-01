@@ -14,7 +14,7 @@ L’obiettivo del progetto è quello di dare un’indicazione sulle principali c
   <img src="/Images/WaterScaleOutput.jpg" alt="STM32L053C8T6 (2)" title="Scala di qualità su EPD" width="400"/>
 </p>
 
-## Struttura del progetto
+## Struttura directory del progetto
 ```bash
 WaterQualitySystem:.
 ├───.settings
