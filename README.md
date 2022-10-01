@@ -3,7 +3,7 @@
 <img src="/Images/unimi_logo.jpg" alt="LOGO" width="100" align="right"/>
 
 - **Autori:** Alessia Libertucci, Michele Zenoni
-- **Corso:** "Progettazione di Sistemi Operativi" 
+- **Corso:** Progettazione di Sistemi Operativi (A.A. 2021/2022) 
 
 
 ## Descrizione
