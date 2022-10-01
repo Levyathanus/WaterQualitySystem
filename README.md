@@ -3,7 +3,7 @@
 <img src="/Images/unimi_logo.jpg" alt="LOGO" width="100" align="right"/>
 
 - **Autori:** Alessia Libertucci, Michele Zenoni
-- **Corso:** "Progettazione di Sistemi Operativi" 
+- **Corso:** Progettazione di Sistemi Operativi (A.A. 2021/2022) 
 
 
 ## Descrizione
@@ -14,7 +14,7 @@ L’obiettivo del progetto è quello di dare un’indicazione sulle principali c
   <img src="/Images/WaterScaleOutput.jpg" alt="STM32L053C8T6 (2)" title="Scala di qualità su EPD" width="400"/>
 </p>
 
-## Struttura del progetto
+## Struttura directory del progetto
 ```bash
 WaterQualitySystem:.
 ├───.settings
